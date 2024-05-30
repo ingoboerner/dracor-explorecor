@@ -18,3 +18,10 @@ services:
       - "8080:8080"
     volumes:
       - ./notebooks:/home/dracor/notebooks
+  nginx:
+    image: nginx:latest
+    container_name: explorecor-book
+    ports:
+      - "80:80"
+    volumes:
+     - ./notebooks/_build/html:/usr/share/nginx/html
