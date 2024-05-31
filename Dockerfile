@@ -7,7 +7,7 @@ MAINTAINER Ingo Börner (ingo.boerner@uni-potsdam.de)
 USER root
 
 # Install required packages
-RUN apk add --update gcc musl-dev linux-headers python3-dev py3-pip py3-numpy py3-pandas libffi-dev g++ jpeg-dev zlib-dev libjpeg make curl git bash
+RUN apk add --update gcc musl-dev linux-headers python3-dev py3-pip py3-numpy py3-pandas py3-nltk libffi-dev g++ jpeg-dev zlib-dev libjpeg make curl git bash
 RUN pip install --upgrade pip
 
 WORKDIR /home/dracor
