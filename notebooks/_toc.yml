@@ -10,6 +10,9 @@ chapters:
   sections:
   - file: 5_Exploring_Programmable_Corpora/5-1_Exploring_Programmable_Corpora_Beginners/README.md
   - file: 5_Exploring_Programmable_Corpora/5-2_Exploring_Programmable_Corpora_Advanced/README.md
+    sections:
+    - file: 5_Exploring_Programmable_Corpora/5-2_Exploring_Programmable_Corpora_Advanced/5-2-1_api-tutorial.ipynb
+    - file: 5_Exploring_Programmable_Corpora/5-2_Exploring_Programmable_Corpora_Advanced/5-2-2_catch-a-protagonist-in-dracor.ipynb
 - file: 6_Reproducibility/README.md
   sections:
   - file: 6_Reproducibility/6-1_quickstart
