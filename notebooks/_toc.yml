@@ -17,3 +17,4 @@ chapters:
   sections:
   - file: 6_Reproducibility/6-1_quickstart
 - file: 7_Open_Topics/README.md
+- file: bibliography.md
