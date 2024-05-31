@@ -9,6 +9,7 @@ logo: logo.png
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
+  timeout: 120
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -30,3 +31,10 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+# Set citation style, see https://jupyterbook.org/en/stable/content/citations.html#change-the-reference-style
+sphinx:
+  config:
+    bibtex_reference_style: author_year
+    bibtex_bibfiles: 
+      - references.bib
