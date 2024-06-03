@@ -20,7 +20,7 @@ You can setup a local DraCor infrastructure and run the provided Jupyter noteboo
 1. In your Terminal clone this repository with the command `git clone https://github.com/dracor-org/dracor-explorecor.git`. Alternatively you can [download](https://github.com/dracor-org/dracor-explorecor/archive/refs/heads/main.zip) and unpack the ZIP file. 
 2. Change into the folder `dracor-explorecor` with the command `cd dracor-explorecor`
 3. Use the command `docker compose up` to start the Docker container
-4. Navigate to [http://localhost:8889](http://localhost:8889) to access your local Jupyter Lab instance containing the materials. A HTML version can be accessed at http://localhost:80 .
+4. Navigate to [http://localhost:8889](http://localhost:8889) to access your local Jupyter Lab instance containing the materials. A HTML version can be accessed at [http://localhost:9980](http://localhost:9980) .
 
 If you encouter problems setting up your environment you can join us for virtual trouble shooting session before the Training School. Please refer to the E-Mail you recieved containing the the Zoom-Link. 
 

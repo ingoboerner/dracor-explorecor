@@ -22,6 +22,6 @@ services:
     image: nginx:latest
     container_name: explorecor-book
     ports:
-      - "80:80"
+      - "9980:80"
     volumes:
      - ./notebooks/_build/html:/usr/share/nginx/html
