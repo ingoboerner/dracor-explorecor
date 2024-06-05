@@ -5,6 +5,8 @@ format: jb-book
 root: intro
 chapters:
 - file: 1_Introduction/README.md
+  sections:
+  - file: 1_Introduction/1-3_DraCor_Showcase.ipynb
 - file: 2_Corpora_in_Research/README.md
 - file: 5_Exploring_Programmable_Corpora/README.md
   sections:
