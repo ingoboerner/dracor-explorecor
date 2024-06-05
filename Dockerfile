@@ -37,6 +37,9 @@ RUN pip install geopandas
 RUN pip install folium
 RUN pip install mapclassify
 
+# SpaCy
+RUN pip install spacy
+
 COPY entrypoint.sh /home/dracor/entrypoint.sh
 RUN chmod +x /home/dracor/entrypoint.sh
 
