@@ -414,13 +414,12 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="to-catch-a-protagonist-in-dracor">
 <h1><em>To catch a protagonist</em> in DraCor<a class="headerlink" href="#to-catch-a-protagonist-in-dracor" title="Link to this heading">#</a></h1>
-<p><strong>by Ingo Börner</strong></p>
-<p>In the paper <a class="reference external" href="https://dh2018.adho.org/to-catch-a-protagonist-quantitative-dominance-relations-in-german-language-drama-1730-1930/"><em>To catch a Protagonist: Quantitatice Domninance Relations in German-Language Drama (1730-1930)</em></a> (<span id="id1">Fischer <em>et al.</em> [<a class="reference internal" href="../../bibliography.html#id2" title="Frank Fischer, Peer Trilcke, Christopher Kittel, Carsten Milling, and Daniil Skorinkin. To Catch a Protagonist: Quantitative Dominance Relations in German-Language Drama (1730–1930). In DH2018: »Puentes/Bridges«. 26–29 June 2018. Book of Abstracts / Libro de resúmenes. Mexico, 2018. Red de Humanidades Digitales A. C. URL: https://dh2018.adho.org/to-catch-a-protagonist-quantitative-dominance-relations-in-german-language-drama-1730-1930/.">2018</a>]</span>) an algorithm is described, that allows to identify characters that are the quantitatively dominant characters of a play based on a set of network-based and count based measures:</p>
+<p>In the paper <a class="reference external" href="https://dh2018.adho.org/to-catch-a-protagonist-quantitative-dominance-relations-in-german-language-drama-1730-1930"><em>To Catch a Protagonist: Quantitative Domninance Relations in German-Language Drama (1730-1930)</em></a> (<span id="id1">Fischer <em>et al.</em> [<a class="reference internal" href="../../bibliography.html#id2" title="Frank Fischer, Peer Trilcke, Christopher Kittel, Carsten Milling, and Daniil Skorinkin. To Catch a Protagonist: Quantitative Dominance Relations in German-Language Drama (1730–1930). In DH2018: »Puentes/Bridges«. 26–29 June 2018. Book of Abstracts / Libro de resúmenes. Mexico, 2018. Red de Humanidades Digitales A. C. URL: https://dh2018.adho.org/to-catch-a-protagonist-quantitative-dominance-relations-in-german-language-drama-1730-1930/.">2018</a>]</span>) an algorithm is described, that allows to identify characters that are the quantitatively dominant characters of a play based on a set of network-based and count based measures:</p>
 <blockquote>
 <div><p>In order to systematically describe the extent of this deviation, we calculate eight values for each character of the 465 dramas of our corpus, three count-based measures (number of scenes a character appears in, number of speech acts, number of spoken words) and five network-related measures (degree, weighted degree, betweenness centrality, closeness centrality, eigenvector centrality). For each measurement a ranking is created. The rankings are then merged into two meta-rankings: one count-based and one network-based. The two meta-rankings are then combined into an overall ranking.</p>
 </div></blockquote>
-<p>The original algorithm was implemented in the tool <a class="reference external" href="https://github.com/lehkost/dramavis">Dramavis</a> by Christopher Kittel. <em>Dramavis</em> operates on XML <a class="reference external" href="https://dlina.github.io/Introducing-Our-Zwischenformat">“zwischenformat”</a> files created in the <a class="reference external" href="https://dlina.github.io">DLINA</a> project.</p>
-<p>The following notebook adapts the code of the respective modules to work with data returned by the <a class="reference external" href="https://dracor.org/doc/api">DraCor API</a>. The aim is to be able to recreate the <code class="docutils literal notranslate"><span class="pre">*_chars.csv</span></code>-files that were used in the study. The data can be found in the <a class="reference external" href="https://github.com/dlina/catch-protagonist">repository</a> on github in the folder <a class="reference external" href="https://github.com/dlina/catch-protagonist/tree/main/data/allmetrics"><code class="docutils literal notranslate"><span class="pre">allmetrics</span></code></a>.</p>
+<p>The original algorithm was implemented in the tool <a class="reference external" href="https://github.com/lehkost/dramavis">Dramavis</a> by Christopher Kittel. <em>Dramavis</em> operates on XML <a class="reference external" href="https://dlina.github.io/Introducing-Our-Zwischenformat">“zwischenformat”</a> files (cf. <span id="id2">[<a class="reference internal" href="../../bibliography.html#id11" title="Dario Kampkaspar, Frank Fischer, and Peer Trilcke. Introducing our 'Zwischenformat'. June 2015. URL: https://dlina.github.io/Introducing-Our-Zwischenformat.">Kampkaspar <em>et al.</em>, 2015</a>]</span>) created in the <a class="reference external" href="https://dlina.github.io">DLINA</a> project.</p>
+<p>The following notebook<a class="footnote-reference brackets" href="#catch-protagonist-notebook-source" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> adapts the code of the respective modules to work with data returned by the <a class="reference external" href="https://dracor.org/doc/api">DraCor API</a>. The aim is to be able to recreate the <code class="docutils literal notranslate"><span class="pre">*_chars.csv</span></code>-files that were used in the study. The data can be found in the <a class="reference external" href="https://github.com/dlina/catch-protagonist">repository</a> on GitHub in the folder <a class="reference external" href="https://github.com/dlina/catch-protagonist/tree/main/data/allmetrics"><code class="docutils literal notranslate"><span class="pre">allmetrics</span></code></a>.</p>
 <p>The implementation will be tested with the play <em>Emilia Galotti</em>. The original algorithm operated on the corresponding <a class="reference external" href="https://dlina.github.io/linas/88">LINA</a> and produced the file <a class="reference external" href="https://github.com/dlina/catch-protagonist/blob/main/data/allmetrics/88_Emilia%20Galotti_chars.csv"><code class="docutils literal notranslate"><span class="pre">88_Emilia</span> <span class="pre">Galotti_chars.csv</span></code></a> as output In DraCor the play can be accessed <a class="reference external" href="https://dracor.org/ger/lessing-emilia-galotti">here</a>.</p>
 <section id="step-1-get-the-basic-measures">
 <h2>Step 1. Get the basic measures<a class="headerlink" href="#step-1-get-the-basic-measures" title="Link to this heading">#</a></h2>
@@ -676,7 +675,7 @@ document.write(`
   <span class="s1">&#39;weightedDegree&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>We don’t know anything about the network metrics of the whole play, though. If we want to retrieve this information, we would have to use the API function <code class="docutils literal notranslate"><span class="pre">/corpora/{corpusname}/play/{playname}/metrics</span></code>, which would also tell us, if there are several sub-networks in a dictionary-field with the key <code class="docutils literal notranslate"><span class="pre">numConnectedComponents</span></code>. This could be relevant, because we can also calculate some network-metrics differently, e.g. the <em>closeness</em>.</p>
+<p>We don’t know anything about the network metrics of the whole play, though. If we want to retrieve this information, we would have to use the API function <code class="docutils literal notranslate"><span class="pre">/corpora/{corpusname}/plays/{playname}/metrics</span></code>, which would also tell us, if there are several sub-networks in a dictionary-field with the key <code class="docutils literal notranslate"><span class="pre">numConnectedComponents</span></code>. This could be relevant, because we can also calculate some network-metrics differently, e.g. the <em>closeness</em>.</p>
 </section>
 </section>
 <section id="preparation-get-the-metrics-and-construct-a-pandas-data-frame">
@@ -686,7 +685,7 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">name,betweenness,degree,closeness,closeness_corrected,strength,eigenvector_centrality,avg_distance,avg_distance_corrected,frequency,speech_acts,words,lines,chars</span> <span class="pre">...</span></code></p>
 <p>We will not include all rows, but only the ones, that are relevant for the rankings:</p>
 <p><code class="docutils literal notranslate"><span class="pre">name</span></code>,<code class="docutils literal notranslate"><span class="pre">betweenness</span></code>,<code class="docutils literal notranslate"><span class="pre">degree</span></code>,<code class="docutils literal notranslate"><span class="pre">closeness</span></code>,~~closeness_corrected~~,<code class="docutils literal notranslate"><span class="pre">strength</span></code>,<code class="docutils literal notranslate"><span class="pre">eigenvector_centrality</span></code>,~~avg_distance,avg_distance_corrected~~,<code class="docutils literal notranslate"><span class="pre">frequency</span></code>,<code class="docutils literal notranslate"><span class="pre">speech_acts</span></code>,<code class="docutils literal notranslate"><span class="pre">words</span></code>,~~lines,chars~~ …</p>
-<p>following rows will be called differently to follow DraCor conventions of the <a class="reference external" href="https://dracor.org/api/corpora/ger/play/lessing-emilia-galotti/cast">API output</a>:</p>
+<p>following rows will be called differently to follow DraCor conventions of the <a class="reference external" href="https://dracor.org/api/corpora/ger/plays/lessing-emilia-galotti/characters">API output</a>:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> → <code class="docutils literal notranslate"><span class="pre">id</span></code>; later this will be used to construct URIs</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">strength</span></code> → <code class="docutils literal notranslate"><span class="pre">weightedDegree</span></code></p></li>
@@ -696,14 +695,6 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">words</span></code> → <code class="docutils literal notranslate"><span class="pre">numOfWords</span></code></p></li>
 </ul>
 <p>The package <a class="reference external" href="https://pandas.pydata.org/"><code class="docutils literal notranslate"><span class="pre">pandas</span></code></a> is used to handle the data as a dataframe. Therefore we need to import the package.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># if not installed, uncomment the following line and run the cell:</span>
-<span class="c1"># !pip install pandas</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -731,8 +722,7 @@ document.write(`
 <span class="c1">#turn the column &quot;id&quot; to the index</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
 <span class="c1">#output</span>
-<span class="n">df</span>
-        
+<span class="n">df</span>      
 </pre></div>
 </div>
 </div>
@@ -955,8 +945,7 @@ Name: marinelli, dtype: float64
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metrics_to_rank</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;degree&#39;</span><span class="p">,</span> <span class="s1">&#39;closeness&#39;</span><span class="p">,</span> <span class="s1">&#39;betweenness&#39;</span><span class="p">,</span> <span class="s1">&#39;weightedDegree&#39;</span><span class="p">,</span> <span class="s1">&#39;eigenvector&#39;</span><span class="p">,</span> <span class="s1">&#39;numOfScenes&#39;</span><span class="p">,</span> <span class="s1">&#39;numOfSpeechActs&#39;</span><span class="p">,</span> <span class="s1">&#39;numOfWords&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">metric</span> <span class="ow">in</span> <span class="n">metrics_to_rank</span><span class="p">:</span>
     <span class="n">df</span><span class="p">[</span><span class="n">metric</span> <span class="o">+</span> <span class="s2">&quot;_rank&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">metric</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">df</span>
-    
+<span class="n">df</span>   
 </pre></div>
 </div>
 </div>
@@ -2096,6 +2085,40 @@ Name: marinelli, dtype: float64
 </div>
 </div>
 </div>
+<p>It is also possible to output a table sorted by rank:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;centrality_rank_avg_rank&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id
+marinelli            1.0
+der_prinz            2.0
+odoardo              3.0
+claudia              4.0
+emilia               5.0
+orsina               6.0
+pirro                7.0
+appiani              7.0
+battista             9.0
+angelo              10.0
+conti               11.0
+der_kammerdiener    12.0
+camillo_rota        13.0
+Name: centrality_rank_avg_rank, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="catch-protagonist-notebook-source" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
+<p>This notebook was originally published in the <a class="reference external" href="https://github.com/dracor-org/dracor-notebooks">dracor-notebooks</a> GitHub repository and presented in the talk “To catch a protagonist … once again. An attempt to recreate a corpus-based study using Linked Data” at the <a class="reference external" href="https://www.distant-reading.net/events/conference-programme">Distant Reading project’s closing conference</a>. For the ExploreCor Training School it has been adapted to work with major version v1 of the DraCor API.</p>
+</aside>
+</aside>
 </section>
 </section>
 
