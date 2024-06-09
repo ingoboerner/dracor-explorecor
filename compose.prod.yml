@@ -1,6 +1,6 @@
 services:
   dracor-dind-jupyterlab:
-    image: "ingoboerner/dracor-dind-jupyterlab"
+    image: "ingoboerner/dracor-dind-jupyterlab:v0.2"
     container_name: dracor-dind-jupyterlab
     privileged: true
     environment:
