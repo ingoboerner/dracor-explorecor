@@ -1,0 +1,24 @@
+services:
+  dracor-dind-jupyterlab:
+    image: "ingoboerner/dracor-dind-jupyterlab"
+    container_name: dracor-dind-jupyterlab
+    privileged: true
+    environment:
+      - GITHUB_TOKEN
+      - DOCKERHUB_USER
+      - DOCKERHUB_PASSWORD
+    ports:
+      - "3030:3030"
+      - "8889:8889"
+      - "8088:8088"
+      - "8787:8787"
+      - "8080:8080"
+    volumes:
+      - ./notebooks:/home/dracor/notebooks
+  nginx:
+    image: nginx:latest
+    container_name: explorecor-book
+    ports:
+      - "9980:80"
+    volumes:
+     - ./notebooks/_build/html:/usr/share/nginx/html
