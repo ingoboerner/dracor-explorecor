@@ -18,13 +18,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-In the following cell we create a scatter plot based on this filtered DataFrame: 
+## References
+```{bibliography}
+:filter: docname in docnames
+```
 ------------------
 
 
-[0;36m  Cell [0;32mIn[15], line 1[0;36m[0m
-[0;31m    In the following cell we create a scatter plot based on this filtered DataFrame:[0m
-[0m       ^[0m
+[0;36m  Cell [0;32mIn[23], line 2[0;36m[0m
+[0;31m    ```{bibliography}[0m
+[0m    ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
 
