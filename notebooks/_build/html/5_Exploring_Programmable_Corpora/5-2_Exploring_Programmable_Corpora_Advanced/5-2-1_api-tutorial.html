@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
   
@@ -193,7 +193,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../6_Reproducibility/README.html">6. Reproducibility in CLS Research</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../6_Reproducibility/6-1_quickstart.html">6.2 Setting up a custom DraCor-Infrastructure: Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../6_Reproducibility/6-2_custom_local_dracor.html">6.2 Setting up a custom DraCor infrastructure</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../7_Open_Topics/README.html">7. Open Topics</a></li>
@@ -564,6 +564,7 @@ document.write(`
 bash: Bashkir Drama Corpus
 cal: Calderón Drama Corpus
 dutch: Dutch Drama Corpus
+eng: English Drama Corpus
 fre: French Drama Corpus
 ger: German Drama Corpus
 gersh: German Shakespeare Drama Corpus
@@ -620,6 +621,7 @@ als: Alsatian Drama Corpus (30)
 bash: Bashkir Drama Corpus (3)
 cal: Calderón Drama Corpus (205)
 dutch: Dutch Drama Corpus (98)
+eng: English Drama Corpus (434)
 fre: French Drama Corpus (1560)
 ger: German Drama Corpus (700)
 gersh: German Shakespeare Drama Corpus (38)
@@ -935,7 +937,7 @@ The name you choose is saved in the variable <code class="docutils literal notra
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;yearNormalized&#39;, ylabel=&#39;size&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/44bae9529a1aa52ac4aca106c29bab5f9fa98797a3c6550211a1c3bfe9575980.png" src="../../_images/44bae9529a1aa52ac4aca106c29bab5f9fa98797a3c6550211a1c3bfe9575980.png" />
+<img alt="../../_images/104a04738dbdfb0d7c20f522d929590c6517105af55eb3d584e462f141a69eaf.png" src="../../_images/104a04738dbdfb0d7c20f522d929590c6517105af55eb3d584e462f141a69eaf.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -949,7 +951,7 @@ The name you choose is saved in the variable <code class="docutils literal notra
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;yearNormalized&#39;, ylabel=&#39;wordCountText&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/fa987196c759499f72193ae62dd0ffa704e879c585e66c5fd4b1a02fee83e8c3.png" src="../../_images/fa987196c759499f72193ae62dd0ffa704e879c585e66c5fd4b1a02fee83e8c3.png" />
+<img alt="../../_images/55e9e0a0a577892c89f2efcf9276d8e8452bac069dd6d02b1df64fc2d16af4c4.png" src="../../_images/55e9e0a0a577892c89f2efcf9276d8e8452bac069dd6d02b1df64fc2d16af4c4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1158,7 +1160,7 @@ The name you choose is saved in the variable <code class="docutils literal notra
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;yearNormalized&#39;, ylabel=&#39;wordCountStagePercentage&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/1a43ef5a199b9067b8a58f56ba7506199488e26595d138de4307edbe480f9122.png" src="../../_images/1a43ef5a199b9067b8a58f56ba7506199488e26595d138de4307edbe480f9122.png" />
+<img alt="../../_images/c9289bfe72e7e5196eeb5be8a22e12424dd7a6f87aae17d3ebbe7c989e4b6aea.png" src="../../_images/c9289bfe72e7e5196eeb5be8a22e12424dd7a6f87aae17d3ebbe7c989e4b6aea.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1174,7 +1176,7 @@ The name you choose is saved in the variable <code class="docutils literal notra
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;yearNormalized&#39;, ylabel=&#39;numOfSpeakersFemalePercentage&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/881289e020dba001ec9ec963e8ab2069fc9ed31d39788b0c6680502d282a11b0.png" src="../../_images/881289e020dba001ec9ec963e8ab2069fc9ed31d39788b0c6680502d282a11b0.png" />
+<img alt="../../_images/1d9fef0ba8b55d57effb70c1c8caf5fb0d9c4732cc634d16dd1247185cb786fc.png" src="../../_images/1d9fef0ba8b55d57effb70c1c8caf5fb0d9c4732cc634d16dd1247185cb786fc.png" />
 </div>
 </div>
 </section>
@@ -1342,7 +1344,9 @@ Combined the URL looks like this: https://dracor.org/api/v1/corpora/swe/plays/st
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt to /root/nltk_data...
-[nltk_data]   Package punkt is already up-to-date!
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]   Unzipping tokenizers/punkt.zip.
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
@@ -1501,7 +1505,7 @@ None of the words found in the speech of this character.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../../_images/53799389f6e0a497669e8fc6d749cdc811ed1b7104619e064fba5744abbc2a7d.png" src="../../_images/53799389f6e0a497669e8fc6d749cdc811ed1b7104619e064fba5744abbc2a7d.png" />
+<img alt="../../_images/bbfd1865ac0aa38e8ea5b5b463237005169b7e77da0f226bbf10c4a5ca5207c0.png" src="../../_images/bbfd1865ac0aa38e8ea5b5b463237005169b7e77da0f226bbf10c4a5ca5207c0.png" />
 </div>
 </div>
 </section>
